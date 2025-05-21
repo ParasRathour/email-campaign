@@ -13,11 +13,13 @@ This is a Django-based application that allows you to manage email campaigns and
 
 
 
+
 ### 1. ✅ Activate the Virtual Environment
 
 Activate your Python virtual environment based on your operating system.
 
   .venv/Scripts/activate
+
 
 
 
@@ -30,6 +32,7 @@ Start the server to access the application locally:
    python manage.py runserver
 
 Default URL: http://127.0.0.1:8000/
+
 
 
 
@@ -47,6 +50,7 @@ Provide subject, preview text, article URL, HTML and plain text content, and the
 
 
 
+
 ### 4. ➕ Add Subscriber(s)
 
 On the homepage, click the “Add Subscriber” button
@@ -57,6 +61,7 @@ The subscriber will now receive emails for future campaigns
 
 
 
+
 ### 5. 🚫 Unsubscribe 
 
 From the homepage, click the “Unsubscribe” button
@@ -64,6 +69,7 @@ From the homepage, click the “Unsubscribe” button
 Enter a subscriber's email address
 
 That user will be removed from the mailing list
+
 
 
 
@@ -89,7 +95,7 @@ Mark campaigns as "sent" after processing
 
 
 
-✅ Summary of Commands
+### ✅ Summary of Commands
 
 Task	                                         Command/URL
 Activate venv (Windows)	                    venv\Scripts\activate
