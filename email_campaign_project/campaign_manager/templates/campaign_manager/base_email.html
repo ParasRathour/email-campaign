@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        .container { background-color: #ffffff; padding: 20px; border-radius: 5px; max-width: 600px; margin: auto; }
+        .header { font-size: 24px; color: #333; margin-bottom: 20px; }
+        .content { font-size: 16px; line-height: 1.6; color: #555; }
+        .button { display: inline-block; padding: 10px 20px; background-color: #007bff; color: #ffffff; text-decoration: none; border-radius: 3px; margin-top: 20px; }
+        .footer { margin-top: 30px; font-size: 12px; color: #777; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">{{ subject }}</div>
+        <div class="preview" style="display:none;font-size:1px;color:#333333;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">
+            {{ preview_text }}
+        </div>
+        <div class="content">
+            <p>Hi {{ first_name|default:"there" }},</p>
+            
+            {% autoescape off %}
+            {{ campaign_html_content }} {# This is where Campaign.html_content gets injected #}
+            {% endautoescape %}
+
+            {% if article_url %}
+                <p><a href="{{ article_url }}" class="button">Read Full Article</a></p>
+            {% endif %}
+        </div>
+        <div class="footer">
+            <p>You received this email because you subscribed to our newsletter.</p>
+            <p><a href="{{ unsubscribe_url }}">Unsubscribe</a></p>
+            <p>© {% now "Y" %} Your Company Name. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

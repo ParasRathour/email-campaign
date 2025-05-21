@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampaignLeap - Elevate Your Email Marketing</title>
+    <style>
+        /* Basic Reset & Typography */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9; /* Light background for contrast */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #007bff; /* Primary color */
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #555;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); /* Engaging gradient */
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* For pseudo-elements if added */
+        }
+
+        .hero::before { /* Optional subtle pattern */
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.07'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #28a745; /* Contrasting CTA color */
+            color: #fff;
+            padding: 15px 35px;
+            font-size: 1.2em;
+            text-decoration: none;
+            border-radius: 50px; /* Pill shape */
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .secondary-cta {
+            background-color: transparent;
+            border: 2px solid #fff;
+            margin-left: 15px;
+        }
+        .secondary-cta:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .features h2 {
+            font-size: 2.5em;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .feature-item {
+            flex-basis: calc(33.333% - 40px); /* Adjust for gap */
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .feature-item i { /* For Font Awesome icons or SVGs */
+            font-size: 2.5em;
+            color: #007bff;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .feature-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #0056b3;
+        }
+        .feature-item p {
+            font-size: 1em;
+            color: #555;
+        }
+
+
+        /* Call to Action Section - Quick Links */
+        .quick-actions {
+            padding: 60px 0;
+            background-color: #eef1f5; /* Slightly different background */
+            text-align: center;
+        }
+
+        .quick-actions h2 {
+            font-size: 2.2em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .action-button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            min-width: 200px;
+        }
+
+        .action-button.alt {
+            background-color: #17a2b8; /* Another distinct color */
+        }
+      
+        .action-button.admin {
+            background-color: #6c757d;
+        }
+
+        .action-button.danger {
+            background-color: #dc3545; 
+        }
+        .action-button:hover {
+            background-color: #0056b3;
+        }
+        .action-button.alt:hover {
+            background-color: #138496;
+        }
+         .action-button.admin:hover {
+            background-color: #545b62;
+        }
+        .action-button.danger:hover { 
+            background-color: #c82333; 
+        }
+
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .feature-item {
+                flex-basis: calc(50% - 30px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+            .feature-item {
+                flex-basis: 100%;
+            }
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .action-button {
+                margin-bottom: 10px;
+                width: 80%;
+                max-width: 300px;
+            }
+        }
+
+    </style>
+    <!-- Consider adding Font Awesome for icons if you like -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflsare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">CampaignLeap</a>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin Panel</a></li>
+                <!-- Add more links as needed, e.g., pricing, about -->
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Launch Your Campaigns, Skyrocket Engagement.</h1>
+            <p>CampaignLeap empowers you to effortlessly manage subscribers, craft stunning emails, and send targeted campaigns that convert. Take control of your email marketing today.</p>
+            <a href="{% url 'admin:campaign_manager_campaign_add' %}" class="cta-button">Create First Campaign</a>
+            <a href="{% url 'add_subscriber_form' %}" class="cta-button secondary-cta">Add Subscribers</a>
+        </div>
+    </header>
+
+    <section id="quick-actions" class="quick-actions">
+        <div class="container">
+            <h2>Get Started Quickly</h2>
+            <div class="action-buttons">s
+                <a href="{% url 'admin:campaign_manager_campaign_add' %}" class="action-button">➕ Add New Campaign</a>
+                <a href="{% url 'add_subscriber_form' %}" class="action-button alt">👤 Add New Subscriber</a>
+                <a href="{% url 'unsubscribe' %}" class="action-button danger">🚫 Unsubscribe from Newsletter</a> 
+              
+                {% comment %} <a href="{% url 'admin:campaign_manager_subscriber_changelist' %}" class="action-button admin">👥 View Subscribers</a>
+                <a href="{% url 'admin:campaign_manager_campaign_changelist' %}" class="action-button admin">📧 View Campaigns</a>
+               {% endcomment %}
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Choose CampaignLeap?</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <!-- Use an <i> tag if you add Font Awesome, or an <img> for an SVG/PNG -->
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">🚀</span>
+                    <h3>Effortless Campaign Creation</h3>
+                    <p>Design beautiful emails with our intuitive tools and send them to the right audience at the right time.</p>
+                </div>
+                <div class="feature-item">
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">👥</span>
+                    <h3>Subscriber Management</h3>
+                    <p>Easily add, import, and manage your subscriber lists. Keep your audience engaged and your data clean.</p>
+                </div>
+                <div class="feature-item">
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">⏱️</span>
+                    <h3>Optimized Sending</h3>
+                    <p>Leverage parallel processing to send your campaigns quickly and efficiently, reaching inboxes faster.</p>
+                </div>
+                 <div class="feature-item">
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">📊</span>
+                    <h3>Admin Powered</h3>
+                    <p>Utilize the robust Django Admin interface for comprehensive data management and system oversight.</p>
+                </div>
+                <div class="feature-item">
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">🔧</span>
+                    <h3>Developer Friendly</h3>
+                    <p>Built with Django, offering flexibility and extensibility for custom needs and integrations.</p>
+                </div>
+                <div class="feature-item">
+                    <span style="font-size: 2.5em; color: #007bff; margin-bottom: 15px; display: block;">🛡️</span>
+                    <h3>Secure & Reliable</h3>
+                    <p>Focus on robust email practices and secure handling of subscriber information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© {% now "Y" %} CampaignLeap. All Rights Reserved. Built with Django.</p>
+            <!-- If you want to use Django template tags like {% now "Y" %}, this page needs to be rendered by a Django view -->
+        </div>
+    </footer>
+
+<script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

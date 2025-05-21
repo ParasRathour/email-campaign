@@ -1,0 +1,15 @@
+Subject: {{ subject }}
+
+Hi {{ first_name|default:"there" }},
+
+{{ campaign_plain_text_content }} {# This is where Campaign.plain_text_content gets injected #}
+
+{% if article_url %}
+Read Full Article: {{ article_url }}
+{% endif %}
+
+---
+You received this email because you subscribed to our newsletter.
+To unsubscribe, please visit: {{ unsubscribe_url }}
+
+© {% now "Y" %} Your Company Name. All rights reserved.
