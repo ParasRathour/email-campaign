@@ -41,7 +41,7 @@ Provide subject, preview text, article URL, HTML and plain text content, and the
 
 
 
-4. ➕ Add Subscriber(s)
+###4. ➕ Add Subscriber(s)
 On the homepage, click the “Add Subscriber” button
 
 Enter a valid email address
@@ -50,7 +50,7 @@ The subscriber will now receive emails for future campaigns
 
 
 
-5. 🚫 Unsubscribe 
+###5. 🚫 Unsubscribe 
 From the homepage, click the “Unsubscribe” button
 
 Enter a subscriber's email address
@@ -59,7 +59,7 @@ That user will be removed from the mailing list
 
 
 
-6. 📤 Send Campaigns (Final Step)
+###6. 📤 Send Campaigns (Final Step)
 After you've added campaigns and subscribers:
 
 Stop the Django server by pressing:
